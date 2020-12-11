@@ -1,0 +1,63 @@
+; first exercise
+
+(defun divisibleBy (x l)
+
+ (if (= x 0)
+  (return-from divisibleBy l))  ; if x = o then return the input
+
+ (setq laux '()) 
+
+ (doList (n l) ; loop input list
+
+   (if (= n 0) ; if element = 0 then element belongs to result list
+       (setq laux (cons n laux) )
+     (if (= 0 (mod x n)) ; if x module n = 0, element belongs to result list
+         (setq laux (cons n laux) )
+       (if (= 0 (mod n x)) ; if n module x = 0, element belongs to result list
+           (setq laux (cons n laux) )))
+     )
+            
+ )
+
+ (return-from divisibleBy (reverse laux)) ; reverse result
+
+)
+
+(print (divisibleBy 10 '(4 30 11 5 0)))
+(print (divisibleBy 6 '(2 6 1 9 18) ))
+
+; second exercise
+
+; get elements from list and sublits and return a new list with all the elements
+; for example: '(a (b c) (c b) a) => '(a b c c b a)
+(defun getListPlain (l1 l2)
+
+ (doList (n l1)
+
+   (if (listp n)
+     (setq l2 (getListPlain n l2))
+     (setq l2 (cons n l2))
+   )
+ )
+ (return-from getListPlain l2)
+)
+
+
+
+(defun isPalindrome (l)
+  
+  (setq laux (getListPlain l '())) ; call getListPlain to get the plain list
+
+  (equal laux (reverse laux))) ; compare list and its reverse, if it is true, the list is palindrome
+
+
+(print (isPalindrome '(a b a) ))
+(print (isPalindrome  '(a (b c) (c b) a)))
+(print (isPalindrome  '(a (b c) ((c) b) a)))
+(print (isPalindrome '(a (b (c d)) ((c d) b) a ) ))	
+
+
+
+
+
+
