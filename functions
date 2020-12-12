@@ -42,19 +42,30 @@
  (return-from getListPlain l2)
 )
 
-
+; get reverse list to validate symmetrical structure
+(defun rev (l)
+           (cond
+             ((null l) '())
+             (T 
+              (if (listp (car l)) ; if the element is a list, we call rev recursively to reverse the sublist
+                (append (rev (cdr l)) (list (rev (car l))))   
+                (append (rev (cdr l)) (list (car l))))))) ; if not the element is returned
 
 (defun isPalindrome (l)
-  
+ 
   (setq laux (getListPlain l '())) ; call getListPlain to get the plain list
-
-  (equal laux (reverse laux))) ; compare list and its reverse, if it is true, the list is palindrome
-
+  
+  (and (equal laux (reverse laux)) (equal (rev l) l)); compare list and its reverse. it also compares if the structue is symmetrical 
+)
 
 (print (isPalindrome '(a b a) ))
 (print (isPalindrome  '(a (b c) (c b) a)))
 (print (isPalindrome  '(a (b c) ((c) b) a)))
-(print (isPalindrome '(a (b (c d)) ((c d) b) a ) ))	
+(print (isPalindrome '(a (b (c d)) ((c d) b) a ) )) 
+(print (isPalindrome '( a (b () b) a)))
+(print (isPalindrome '((a b) a (b a)) ))
+
+
 
 
 
