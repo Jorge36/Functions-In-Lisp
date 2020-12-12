@@ -13,10 +13,10 @@ returns the list
 A hint:  Notice a mathematical quirk here:  every number E divides exactly into 0: (modulo 0 E)=0 for all possible numbers E, but you cannot divide a number by 0: (modulo E 0) will give a "divide-by-zero" error.   This means that you will need to add a special case to your function to "catch" the situation where an element (car L) in the list L is equal to 0, to make sure you don't call (modulo E (car L)).
 
 
- For example:
+For example:
 Test	Result
-(divisibleBy 10 '(4 30 11 5 0)) => (30 5 0)
-(divisibleBy 6 '(2 6 1 9 18) ) =>	(2 6 1 18)
+1. (divisibleBy 10 '(4 30 11 5 0)) => (30 5 0)
+2. (divisibleBy 6 '(2 6 1 9 18) ) =>	(2 6 1 18)
 
 Exercise 2
 
@@ -37,10 +37,10 @@ Write a function (isPalindrome L) that takes a list L and returns true if L is a
 
 For example:
 Test	Result
-(isPalindrome '(a b a) ) => t	
-(isPalindrome  '(a (b c) (c b) a)) => t
-(isPalindrome  '(a (b c) ((c) b) a)) =>	t
-(isPalindrome '(a (b (c d)) ((c d) b) a ) ) => f
+1. (isPalindrome '(a b a) ) => t	
+2. (isPalindrome  '(a (b c) (c b) a)) => t
+3. (isPalindrome  '(a (b c) ((c) b) a)) =>	t
+4. (isPalindrome '(a (b (c d)) ((c d) b) a ) ) => f
 
 
 
