@@ -37,8 +37,8 @@ For example:
 Test	Result
 1. (isPalindrome '(a b a) ) => t	
 2. (isPalindrome  '(a (b c) (c b) a)) => t
-3. (isPalindrome  '(a (b c) ((c) b) a)) =>	t
-4. (isPalindrome '(a (b (c d)) ((c d) b) a ) ) => f
+3. (isPalindrome  '(a (b c) ((c) b) a)) =>	nil
+4. (isPalindrome '(a (b (c d)) ((c d) b) a ) ) => nil
 
 
 
