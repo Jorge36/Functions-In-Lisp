@@ -1,7 +1,8 @@
 # functionsInLisp
-2 functions in Lisp
 
-Exercise 1
+# 2 functions in Lisp
+
+# Exercise 1
 
 Write a function divisibleBy which takes two arguments, a number N and a list of numbers L,  and returns a new list containing all numbers X in the list L where either X divides N exactly, or N divides X exactly.  You can assume that all numbers will be integers, and you can assume that the input  number N will never be 0 (but numbers in the list L may be 0).
 You probably want to use the built-in modulo function here.  The call (modulo X N) gives the remainder you get after dividing X by N.  
@@ -15,7 +16,7 @@ Test	Result
 1. (divisibleBy 10 '(4 30 11 5 0)) => (30 5 0)
 2. (divisibleBy 6 '(2 6 1 9 18) ) =>	(2 6 1 18)
 
-Exercise 2
+# Exercise 2
 
 A plaindrome is a sequence that is symmetrical: it reads the same in forward and in reverse order.  The numbers 11, 131, 14541 are all palindromes, for example.   
 In scheme we can distinguish between two types of palindromes: simple palindromes and structured palindromes.   Simple palindromes involve only flat lists (lists with no sublists) and are symmetrical in their elements. Examples of simple palindromes are the lists
