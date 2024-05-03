@@ -1,5 +1,3 @@
-functions in Lisp
-
 **2 functions in Lisp**
 
 **Exercise 1**
