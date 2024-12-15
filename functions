@@ -121,6 +121,32 @@
 (format t "original list: ~A~%" l6)
 (format t "result: ~A~%" (duplicate-entries l6)) ; T
 
+; fifth exercise
+(defun has-number-p (exp) 
+    (if (numberp exp) ; it is a number
+        (return-from has-number-p T)
+        (if (listp exp) ; it is a lits
+            (let ((result nil))
+                (dolist (el exp result) ; travell through expression
+                    (if (listp el) ; if the first element in the list is a list
+                        (if (eq (has-number-p el) T) (return-from has-number-p T)) ; calll recursively
+                        (if (some #'numberp (list el)) (return-from has-number-p T))))) ; if el is a number return T
+            (return-from has-number-p nil)))) ; it is not a number or a list
+
+(format t "result has a number 1: ~A~%" (has-number-p '(b c d (3)))) ; Return T (because 3 is in the list)
+(format t "result has a number 2: ~A~%" (has-number-p '(a (b 2) c))) ; Returns T (because 2 is in the list)
+(format t "result has a number 3: ~A~%" (has-number-p '(a (b) c)))   ; Returns NIL (no numbers)
+(format t "result has a number 4: ~A~%" (has-number-p '(a (b 3))))   ; Returns T (because 3 is in the sublist)
+(format t "result has a number 5: ~A~%" (has-number-p 5))            ; Returns T (because 5 is a number)
+(format t "result has a number 6: ~A~%" (has-number-p 'hello))       ; Returns NIL (no numbers)
+
+; Another method more efficient for same problem
+(defun has-number-p2 (exp)
+  (cond
+    ((numberp exp) T)   ; Base case: if exp is a number, return T
+    ((listp exp)        ; If exp is a list, check its elements
+     (some #'has-number-p2 exp))
+    (t nil)))           ; If exp is neither a number nor a list, return nil
 
 
 
