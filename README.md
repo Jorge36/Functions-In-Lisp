@@ -19,20 +19,19 @@ Test	Result
 A plaindrome is a sequence that is symmetrical: it reads the same in forward and in reverse order.  The numbers 11, 131, 14541 are all palindromes, for example.   
 In scheme we can distinguish between two types of palindromes: simple palindromes and structured palindromes.   Simple palindromes involve only flat lists (lists with no sublists) and are symmetrical in their elements. Examples of simple palindromes are the lists.
 
-For example: Test Result:
 1.	 '(a a)
 2. '(a b a) 
 3.	'(a b b a)  
 4.	'(a b a b a)
 
 Structured palindromes involve lists with sublists, and are symmetrical both in elements and their structure.  Examples of structured palindromes are the lists
+
 1.	'( (a b) a (b a) ) 
 2.	  '(a (b c) (c b) a)
 3.	 '( a (b () b) a)
 4.	 '(a b a)
 
 Note that lists such as '( (a b) a b a) are symmetrical in terms of their sequence of elements, but not in terms of their structure: these are not structured palindromes. Write a function (isPalindrome L) that takes a list L and returns true if L is a simple or structured palindrome and false otherwise.   
-
 
 For example:
 Test	Result
@@ -43,7 +42,8 @@ Test	Result
 
 **Exercise 3**
 
-The reverse() method reverses the elements of a list
+The reverse() method reverses the elements of a list.
+
 For example:
 Test Result
 1. (reverse-aux '(1 2 3 (5 6) ((7 (8))))) => (((7 (8))) (5 6) 3 2 1)
@@ -55,6 +55,8 @@ Test Result
 Write a Lisp function duplicate-entries that takes a list and returns true if it contains multiple copies of some entry, and NIL otherwise. Be sure to handle nested lists properly. You can do this recursively, or my using the mapping functions. For example, maplist. Did you know that member takes an optional argument, :TEST, followed by a function to be used for testing 
 equality? For example, (member thing1 thing2 :TEST #’equal). This will often be VERY useful.
 
+For example: 
+Test Result
 1. (duplicate-entries '((a) (c) (b))) => nil
 2. (duplicate-entries '(1 (1 2 (4) (1 2 3)) (1 2 (5) (1 2 3)) 1)) => t
 3. (duplicate-entries '((a) (2) (b) (z (2)))) => nil
@@ -67,6 +69,8 @@ equality? For example, (member thing1 thing2 :TEST #’equal). This will often b
 Define (has-number-p s-exp) to return true if the s-expression is or contains a number.
 Implement this using a simple conditional, recursion, and SOME. Letting SOME do some of the work is more efficient than a pure CAR-CDR recursive solution.
 
+For example: 
+Test Result
 1. (has-number-p '(b c d (3))) => t
 2. (has-number-p '(a (b 2) c)) => t
 3. (has-number-p '(a (b) c)) => nil
