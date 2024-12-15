@@ -48,4 +48,15 @@ Test Result
 2. (reverse-aux '()) => NIL
 3. (reverse-aux '(1 2 3 (6) (9) 34 5)) => (5 34 (9) (6) 3 2 1)
 
+**Exercise 4**
+
+Write a Lisp function duplicate-entries that takes a list and returns true if it contains multiple copies of some entry, and NIL otherwise. Be sure to handle nested lists properly. You can do this recursively, or my using the mapping functions. For example, maplist. Did you know that member takes an optional argument, :TEST, followed by a function to be used for testing 
+equality? For example, (member thing1 thing2 :TEST #’equal). This will often be VERY useful.
+
+1. (duplicate-entries '((a) (c) (b))) => NIL
+2. (duplicate-entries '(1 (1 2 (4) (1 2 3)) (1 2 (5) (1 2 3)) 1)) => T
+3. (duplicate-entries '((a) (2) (b) (z (2)))) => NIL
+4. (duplicate-entries '((a) (c) (b) (z (c)) (c))) => T
+5. (duplicate-entries '(a b (a) c d)) => NIL
+6. (duplicate-entries '((a b) b c (a b))) => T
 
