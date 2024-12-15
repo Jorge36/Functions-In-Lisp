@@ -39,6 +39,12 @@ Test	Result
 3. (isPalindrome  '(a (b c) ((c) b) a)) =>	nil
 4. (isPalindrome '(a (b (c d)) ((c d) b) a ) ) => nil
 
-
+**Exercise 3**
+; The reverse() method reverses the elements of a list
+For example:
+Test Result
+1. (reverse-aux '(1 2 3 (5 6) ((7 (8))))) => (((7 (8))) (5 6) 3 2 1)
+2. (reverse-aux '()) => NIL
+3. (reverse-aux '(1 2 3 (6) (9) 34 5)) => (5 34 (9) (6) 3 2 1)
 
 
