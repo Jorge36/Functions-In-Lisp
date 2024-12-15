@@ -1,4 +1,4 @@
-**4 Functions in Lisp**
+**5 Functions in Lisp**
 
 **Exercise 1**
 
@@ -53,10 +53,21 @@ Test Result
 Write a Lisp function duplicate-entries that takes a list and returns true if it contains multiple copies of some entry, and NIL otherwise. Be sure to handle nested lists properly. You can do this recursively, or my using the mapping functions. For example, maplist. Did you know that member takes an optional argument, :TEST, followed by a function to be used for testing 
 equality? For example, (member thing1 thing2 :TEST #’equal). This will often be VERY useful.
 
-1. (duplicate-entries '((a) (c) (b))) => NIL
-2. (duplicate-entries '(1 (1 2 (4) (1 2 3)) (1 2 (5) (1 2 3)) 1)) => T
-3. (duplicate-entries '((a) (2) (b) (z (2)))) => NIL
-4. (duplicate-entries '((a) (c) (b) (z (c)) (c))) => T
-5. (duplicate-entries '(a b (a) c d)) => NIL
-6. (duplicate-entries '((a b) b c (a b))) => T
+1. (duplicate-entries '((a) (c) (b))) => nil
+2. (duplicate-entries '(1 (1 2 (4) (1 2 3)) (1 2 (5) (1 2 3)) 1)) => t
+3. (duplicate-entries '((a) (2) (b) (z (2)))) => nil
+4. (duplicate-entries '((a) (c) (b) (z (c)) (c))) => t
+5. (duplicate-entries '(a b (a) c d)) => nil
+6. (duplicate-entries '((a b) b c (a b))) => t
 
+**Exercise 5**
+
+Define (has-number-p s-exp) to return true if the s-expression is or contains a number.
+Implement this using a simple conditional, recursion, and SOME. Letting SOME do some of the work is more efficient than a pure CAR-CDR recursive solution.
+
+1. (has-number-p '(b c d (3))) => t
+2. (has-number-p '(a (b 2) c)) => t
+3. (has-number-p '(a (b) c)) => nil
+4. (has-number-p '(a (b 3))) => t
+5. (has-number-p 5) => t
+6. (has-number-p 'hello) => nil
