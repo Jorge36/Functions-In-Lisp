@@ -65,6 +65,25 @@
 (print (isPalindrome '( a (b () b) a)))
 (print (isPalindrome '((a b) a (b a)) ))
 
+; third exercise
+(defun reverse-aux (x)
+    (if (eq x '()) 
+        '()
+        (append (reverse-aux (rest x)) (list (car x)))))
+
+
+(defvar l1 '(1 2 3 (5 6) ((7 (8)))))
+(format t "original list: ~A~%" l1)
+(format t "revert: ~A~%" (reverse-aux l1)) ; (((7 (8))) (5 6) 3 2 1)
+
+(defvar l2 '())
+(format t "original list: ~A~%" l2)
+(format t "revert: ~A~%" (reverse-aux l2)) ; NIL
+
+(defvar l3 '(1 2 3 (6) (9) 34 5))
+(format t "original list: ~A~%" l3)
+(format t "revert: ~A~%" (reverse-aux l3)) ; (5 34 (9) (6) 3 2 1)
+
 
 
 
