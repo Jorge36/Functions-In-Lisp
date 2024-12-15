@@ -17,7 +17,9 @@ Test	Result
 **Exercise 2**
 
 A plaindrome is a sequence that is symmetrical: it reads the same in forward and in reverse order.  The numbers 11, 131, 14541 are all palindromes, for example.   
-In scheme we can distinguish between two types of palindromes: simple palindromes and structured palindromes.   Simple palindromes involve only flat lists (lists with no sublists) and are symmetrical in their elements. Examples of simple palindromes are the lists
+In scheme we can distinguish between two types of palindromes: simple palindromes and structured palindromes.   Simple palindromes involve only flat lists (lists with no sublists) and are symmetrical in their elements. Examples of simple palindromes are the lists.
+
+For example: Test Result:
 1.	 '(a a)
 2. '(a b a) 
 3.	'(a b b a)  
