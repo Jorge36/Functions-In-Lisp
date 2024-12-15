@@ -140,7 +140,7 @@
 (format t "result has a number 5: ~A~%" (has-number-p 5))            ; Returns T (because 5 is a number)
 (format t "result has a number 6: ~A~%" (has-number-p 'hello))       ; Returns NIL (no numbers)
 
-; Another function more efficient for same problem
+; Another function more efficient for same problem given by ChatGPT
 (defun has-number-p2 (exp)
   (cond
     ((numberp exp) T)   ; Base case: if exp is a number, return T
