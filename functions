@@ -84,7 +84,42 @@
 (format t "original list: ~A~%" l3)
 (format t "revert: ~A~%" (reverse-aux l3)) ; (5 34 (9) (6) 3 2 1)
 
+; fourth exercise
+(defun search-duplicates(l) 
 
+    (maplist #'(lambda (y) ; travel through list wit maplist
+    (if (member (car y) (cdr y) :test #'equal)  ; if the first element is in the rest of the list
+                                                ; EQUAL (if you just care about elements)
+        (return-from search-duplicates '(T)) 1)) l)  ; return '(T) otherwise continue travelling
+
+)
+(defun duplicate-entries(l)
+    (let (result) (if (eq T (first (funcall #'search-duplicates l))) T nil)))
+
+
+(defvar l1 '((a) (c) (b)))
+(format t "original list: ~A~%" l1)
+(format t "result: ~A~%" (duplicate-entries l1)) ; NIL
+
+(defvar l2 '(1 (1 2 (4) (1 2 3)) (1 2 (5) (1 2 3)) 1)) 
+(format t "original list: ~A~%" l2)
+(format t "result: ~A~%" (duplicate-entries l2)) ; T
+
+(defvar l3 '((a) (2) (b) (z (2))))
+(format t "original list: ~A~%" l3)
+(format t "result: ~A~%" (duplicate-entries l3)) ; NIL
+
+(defvar l4 '((a) (c) (b) (z (c)) (c)))
+(format t "original list: ~A~%" l4)
+(format t "result: ~A~%" (duplicate-entries l4)) ; T
+
+(defvar l5 '(a b (a) c d)) ; ’(a b (a) c d)
+(format t "original list: ~A~%" l5)
+(format t "result: ~A~%" (duplicate-entries l5)) ; NIL
+
+(defvar l6 '((a b) b c (a b))) 
+(format t "original list: ~A~%" l6)
+(format t "result: ~A~%" (duplicate-entries l6)) ; T
 
 
 
