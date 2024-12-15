@@ -1,4 +1,4 @@
-**3 Functions in Lisp**
+**4 Functions in Lisp**
 
 **Exercise 1**
 
