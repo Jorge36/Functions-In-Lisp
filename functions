@@ -1,5 +1,4 @@
 ; first exercise
-
 (defun divisibleBy (x l)
 
  (if (= x 0)
@@ -27,7 +26,6 @@
 (print (divisibleBy 6 '(2 6 1 9 18) ))
 
 ; second exercise
-
 ; get elements from list and sublits and return a new list with all the elements
 ; for example: '(a (b c) (c b) a) => '(a b c c b a)
 (defun getListPlain (l1 l2)
